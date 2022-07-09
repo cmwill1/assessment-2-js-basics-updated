@@ -53,21 +53,18 @@ console.log(greetUser('Andrew'))
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206];
 
 //CODE HERE
-function canWeDeliver(zipCode){
-    const zip = zipCode.length;
-    for (let i=0; i < zip / 2; i++) {
-        if (zipCode[i] !== zipCode[zip + 1 + i]) {
-            return `You're in our delivery zone!`
+function canWeDeliver(zipCode) {
+    for (let i=0; i < deliveryAreaZipCodes.length; i++) {
+        if (deliveryAreaZipCodes[i] === zipCode) {
+            return console.log(`You're in our delivery zone!`)
         } else {
-            return `Sorry, we can't deliver to that address`
+            return console.log(`Sorry, we can't deliver to that address`)
         }
     }
 }
 
-let zipCode = 48073
-const num= canWeDeliver(zipCode);
-console.log(num)
-    
+canWeDeliver(48073)
+
 // Problem 2 Continued
 
 //     Now you're going to rewrite your function.
@@ -86,9 +83,14 @@ console.log(num)
 
 // CODE HERE
 const canWeDeliver2 = (zipCode) => {
-deliveryAreaZipCodes = (zipCode.includes(48073))
+if (deliveryAreaZipCodes.includes(zipCode)){
+    return console.log(`You're in our delivery zone!`)
+} else {
+    return console.log(`Sorry, we can't deliver to that address`)
 }
-console.log(canWeDeliver2)
+}
+canWeDeliver2(48009)
+canWeDeliver2(85203)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -124,8 +126,9 @@ const deals = [
 */
 
 //CODE HERE
-deals[0] = {title:"10% off!", desc:'Applied to your entire order when you spend $30 or more'}
+deals[0].title = deals[0].title.replace("15","10")
 
+console.log(deals)
 //     The restaurant is going to continue its
 //     family deal for another month. 
 
@@ -139,5 +142,5 @@ deals[0] = {title:"10% off!", desc:'Applied to your entire order when you spend 
 // */
 
 //CODE HERE
-deals[1] ={title: 'Free Kids Meal with 2 Regular Entrees', desc: '   This deal lasts until the end of April! '}
+deals[1].desc = deals[1].desc.replace("March", "April")
 console.log(deals)

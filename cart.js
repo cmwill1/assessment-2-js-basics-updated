@@ -60,8 +60,8 @@ console.log(summedPrice)
 
 //Use an arrow function and set 3 parameters.
 
-calcFinalPrice = (cartTotal,couponValue,tax) => {
-console.log(cartTotal * tax  - couponValue)
+const calcFinalPrice = (cartTotal,couponValue,tax) => {
+return ((cartTotal * tax) - couponValue + cartTotal)
 }
 console.log(calcFinalPrice(5,3,.06))
 
@@ -101,10 +101,10 @@ console.log(calcFinalPrice(5,3,.06))
 //CODE HERE
 const customerInfo = [
     {
-      name: 'string',
-      phoneNum: number,
-      address: number + 'string',
-      payment: number + 'string',
+      name: 'Christina',
+      phoneNum: 2345342176,
+      address: 1700 + 'Pennington Rd',
+      payment: 4354890765432145 + 'visa',
       
     }, 
 ]
